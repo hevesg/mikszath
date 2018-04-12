@@ -36,3 +36,5 @@ xmlrpc.php
 /modules
 /profiles
 /scripts
+
+/node_modules

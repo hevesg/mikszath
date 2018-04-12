@@ -1,0 +1,33 @@
+<?php
+
+function mixat_preprocess_input(&$variables) {
+  $form_control = in_array($variables['attributes']['type'], array(
+    'text',
+    'password',
+    'search'
+  ));
+  $btn = in_array($variables['attributes']['type'], array(
+    'button',
+    'submit',
+    'reset'
+  ));
+  if ($form_control) {
+    $variables['attributes']['class'][] = 'form-control';
+  }
+  if ($btn) {
+    $variables['attributes']['class'][] = 'btn';
+    if ($variables['attributes']['type'] == 'submit') {
+      $variables['attributes']['class'][] = 'btn-primary';
+    } else if ($variables['attributes']['type'] == 'button') {
+      $variables['attributes']['class'][] = 'btn-default';
+    } else {
+      $variables['attributes']['class'][] = 'btn-link';
+    }
+  }
+  if ($variables['attributes']['type'] == 'search') {
+    $variables['attributes']['class'][] = 'input-lg';
+  }
+  $variables['attributes']['class'][] = 'input' . $variables['attributes']['type'];
+}
+
+?>
