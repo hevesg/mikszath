@@ -1,0 +1,52 @@
+.chalkboard {
+  background-color: @gray-darker;
+  background-image: url(../assets/chalkboard.jpg);
+  box-shadow: 0 0 100px #000 inset;
+  background-size: 100% auto;
+  color: #ccc;
+  a {
+    color: #fcc;
+  }
+}
+.page-header, .block > h2 {
+  background-color: @gray-darker;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #fff;
+  text-shadow: 1px 0 0 #fff;
+  box-shadow: @global-shadow;
+  font-family: @font-family-cursive;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: -@grid-gutter-width/2;
+  margin-right: -@grid-gutter-width/2;
+}
+.block > h2 {
+  text-align: center;
+}
+@media (min-width: @screen-sm-min) {
+  body {
+    background-image: url(http://img06.deviantart.net/49d3/i/2010/245/0/c/pinboard_texture_by_nikky81-d2xuip9.png);
+    background-repeat: repeat;
+  }
+  #site-main {
+    box-shadow: @inner-shadow;
+    padding: 70px 0;
+  }
+  .page-header, .block > h2 {
+    margin-left:0;
+    margin-right:0;
+  }
+  .content article {
+    background-color: #fff;
+    box-shadow: @global-shadow;
+    padding: @grid-gutter-width;
+  }
+  .note {
+    background-color: #fff;
+    padding: @grid-gutter-width;
+    box-shadow: @global-shadow;
+    position: relative;
+    font-family: @font-family-cursive;
+  }
+}

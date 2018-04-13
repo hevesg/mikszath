@@ -14,7 +14,7 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         darken(#428bca, 6.5%); // #337ab7
+@brand-primary:         #DE1B1B; // #337ab7
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -46,9 +46,10 @@
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-sans-serif;
+@font-family-cursive:     'Amatic SC', cursive;
+@font-family-base:        @font-family-serif;
 
-@font-size-base:          14px;
+@font-size-base:          18px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
@@ -76,7 +77,7 @@
 //## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
 
 //** Load fonts from this directory.
-@icon-font-path:          "../fonts/";
+@icon-font-path:          "../fonts/glyphicons/";
 //** File name for all font files.
 @icon-font-name:          "glyphicons-halflings-regular";
 //** Element ID within SVG icon file.
@@ -358,23 +359,23 @@
 
 // Basics of a navbar
 @navbar-height:                    50px;
-@navbar-margin-bottom:             @line-height-computed;
+@navbar-margin-bottom:             0;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
-@navbar-default-color:             #777;
-@navbar-default-bg:                #f8f8f8;
+@navbar-default-color:             #fff;
+@navbar-default-bg:                transparent;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
-@navbar-default-link-color:                #777;
-@navbar-default-link-hover-color:          #333;
+@navbar-default-link-color:                #fff;
+@navbar-default-link-hover-color:          @gray-lighter;
 @navbar-default-link-hover-bg:             transparent;
-@navbar-default-link-active-color:         #555;
-@navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
-@navbar-default-link-disabled-color:       #ccc;
+@navbar-default-link-active-color:         @gray-darker;
+@navbar-default-link-active-bg:            @gray-lighter;
+@navbar-default-link-disabled-color:       @gray-dark;
 @navbar-default-link-disabled-bg:          transparent;
 
 // Navbar brand label
@@ -867,3 +868,6 @@
 @dl-horizontal-breakpoint:    @grid-float-breakpoint;
 //** Horizontal line color.
 @hr-border:                   @gray-lighter;
+
+@global-shadow: 0 3px 6px #000;
+@inner-shadow: 0 0 100px #000 inset;

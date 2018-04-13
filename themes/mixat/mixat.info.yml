@@ -3,7 +3,7 @@ type: theme
 base theme: false
 
 name: 'Mixát'
-description: 'A Lí'
+description: 'A Mikszáth Kálmán Líceum hivatalos Drupal sminkje'
 
 regions:
   navigation: 'Navigation'

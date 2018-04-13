@@ -71,6 +71,7 @@
     node.isPromoted() ? 'is-promoted',
     node.isSticky() ? 'is-sticky',
     not node.isPublished() ? 'is-unpublished',
+    not page ? 'note',
     view_mode ? view_mode|clean_class,
     'clearfix',
   ]
@@ -99,7 +100,7 @@
 {% else %}
 
   <article{{ attributes.addClass(classes) }}>
-    {% if content.field_gallery|render and content.field_youtube|render %}
+    {# if content.field_gallery|render and content.field_youtube|render %}
       <div class="tabs">
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#gallery" aria-controls="gallery" role="tab" data-toggle="tab">{{ content.field_gallery|field_label }}</a></li>
@@ -119,7 +120,7 @@
       {{ content.field_gallery }}
       {{ content.field_youtube }}
       <hr />
-    {% endif %}
+    {% endif #}
 
 
     <div class="row">
@@ -132,7 +133,7 @@
         </div>
       {% endif %}
       <div class="{{ display_submitted ? 'col-sm-10' : 'col-sm-12' }}">
-        {{ content|without('field_gallery', 'field_youtube') }}
+        {{ content }}
       </div>
     </div>
   </article>
